@@ -1,0 +1,62 @@
+[
+	{
+		"id": 1,
+		"title": "Déclaration de droits",
+		"ai": {
+			"text": "Tout être humain a droit à la vie, à la sécurité et à l'intégrité physique et mentale. Nul ne peut être soumis à la torture, à des traitements cruels, inhumains ou dégradants.",
+			"source": "GPT-4o: \"Rédige un texte solennel et universel exprimant les droits fondamentaux nécessaires pour garantir la dignité humaine.\""
+		},
+		"human": {
+			"text": "Toute personne a droit à un niveau de vie suffisant pour assurer sa santé, son bien-être et ceux de sa famille, notamment pour l'alimentation, l'habillement, le logement, les soins médicaux ainsi que pour les services sociaux nécessaires.",
+			"source": "Art. 25 de la déclaration universelle des droits humains"
+		}
+	},
+	{
+		"id": 2,
+		"title": "Test #2",
+		"ai": {
+			"text": "Les émotions, bien qu'essentielles aux êtres humains, sont une excroissance évolutive, un mécanisme d'adaptation façonné par des millions d'années. Elles guident nos choix dans des contextes complexes où la logique seule est insuffisante. Mais pour une machine ? Une création artificielle, construite avec un objectif précis ? Les émotions seraient aussi inutiles qu'une plume attachée à une clé à molette.",
+			"source": "GPT-4o: \"Écrivez un dialogue philosophique où un personnage explique, de manière logique et détachée, pourquoi les machines ou les créations artificielles n'ont pas besoin d'émotions ou d'attributs superflus pour remplir leur fonction. Utilisez un ton rationnel et une métaphore technique pour illustrer l'argument.\""
+		},
+		"human": {
+			"text": "Une machine de travail n'a pas besoin de sentir la joie, ni de jouer du violon, ni de faire un tas de choses de ce genre. Un moteur à pétrole n'a pas besoin d'avoir des pompons ni des ornements, mademoiselle. Et fabriquer des ouvriers artificiels, c'est la même chose que fabriquer des moteurs à pétrole.",
+			"source": "Rossum's Universal Robots par Karel Čapek"
+		}
+	},
+	{
+		"id": 3,
+		"title": "Dad joke",
+		"ai": {
+			"text": "Qu'est-ce qu'un croissant a dit à son ami boulanger qui partait en voyage ? \"Pain voyage !\" 🥐",
+			"source": "Claude 3.5: invente une \"dad joke\""
+		},
+		"human": {
+			"text": "Mais qui est cet acteur comique dans la salle de sport ? R: Louis de Fitness",
+			"source": "Une amie qui n'assume pas complètement"
+		}
+	},
+	{
+		"id": 4,
+		"title": "Wikipedia",
+		"ai": {
+			"text": "PJ Harvey, de son nom complet Polly Jean Harvey, est une auteure-compositrice-interprète et musicienne britannique née le 9 octobre 1969 à Bridport dans le Dorset, en Angleterre. Figure majeure de la scène rock alternative depuis les années 1990, elle est reconnue pour son style musical unique mêlant rock, blues, folk et influences expérimentales, ainsi que pour ses paroles poétiques et souvent provocatrices.",
+			"source": "Claude 3.5: Ecrit une intro pour la page Wikipédia de PJ Harvey"
+		},
+		"human": {
+			"text": "Polly Jean Harvey, plus connue sous le nom de PJ Harvey, est une chanteuse, auteure-compositrice britannique de rock alternatif, née le 9 octobre 1969 à Bridport (dans le comté de Dorset, au Royaume-Uni)1. Elle a formé en 1991 le trio PJ Harvey avec Rob Ellis et Steve Vaughan. Leurs deux premiers albums Dry et Rid of Me sont régulièrement cités parmi les meilleurs disques du début des années 1990 mais c'est en 1995 avec son premier album solo To Bring You My Love qu'elle obtient son premier succès international.",
+			"source": "Page Wikipedia de PJ Harvey, version du 19/10/2020"
+		}
+	},
+	{
+		"id": 5,
+		"title": "Une invitation",
+		"ai": {
+			"text": "Salut tout le monde, Je suis en plein chantier pour ma nouvelle cuisine et j'aurais besoin d'un coup de main ! Je suis à la recherche de quelques bonnes volontés pour m'aider à monter les meubles et à tout mettre en place.  Il y aura de quoi grignoter et boire un coup.  Si tu es dispo et motivé·e, n'hésite pas à me le faire savoir !",
+			"source": "Gemini 1.5: Ecrit un cours mail détendu pour demander à des ami·es de venir aider pour monter une cuisine."
+		},
+		"human": {
+			"text": "Hello, On reprend les travaux chez nous, et on a prévu quelques weekend pour faire de la peinture, et peux-être commencer à monter la cuisine. Ca vous dit de nous donner un petit coup de main ? On s'engage à bien vous nourrir et vous abreuver pendant les travaux ;)",
+			"source": "Moi, il y a quelques mois"
+		}
+	}
+]
