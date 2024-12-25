@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 </script>
 
 <div class="flex min-h-screen flex-col bg-blue_violet-200 text-white">
@@ -17,7 +18,7 @@
 		</div>
 		<div class="mt-5 text-center">
 			<a
-				href="/questions"
+				href="{base}/questions"
 				class="rounded bg-azure-300 px-4 py-2 hover:bg-azure-200 active:bg-azure-100"
 				>Faire le test</a
 			>
