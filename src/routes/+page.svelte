@@ -2,12 +2,14 @@
 	import Commentator from '$lib/Commentator.svelte';
 	import Option from '$lib/Option.svelte';
 	import original_challenges from '$lib/challenges.json';
+	import { generateUUID, save_guess } from '$lib/log.js';
 
 	function randomTextOrder() {
 		return Math.random() < 0.5 ? ['ai', 'human'] : ['human', 'ai'];
 	}
 
 	const challenges = [...original_challenges].sort(() => Math.random() - 0.5);
+	const session_id = generateUUID();
 
 	let currentChallengeID = $state(0);
 	let currentChallenge = $derived(challenges[currentChallengeID]);
@@ -19,7 +21,9 @@
 
 	function submitGuess(event) {
 		event.preventDefault();
-		results = [...results, textOrder[guess] === 'human'];
+		const correct = textOrder[guess] === 'human';
+		results = [...results, correct];
+		save_guess(session_id, currentChallenge.id, correct);
 		if (challenges.length > currentChallengeID + 1) {
 			phase = 1;
 		} else {
@@ -79,7 +83,7 @@
 			class:bg-forest_green-400={last_result && phase !== 0}
 			class:bg-red={!last_result && phase !== 0}
 			class:bg-amber={phase === 0}
-			class="absolute left-1/2 top-1/2 min-w-72 -translate-x-1/2 -translate-y-1/2 -rotate-1 rounded p-4 shadow-lg lg:top-0"
+			class="absolute left-1/2 top-1/2 min-w-72 -translate-x-1/2 -translate-y-1/2 lg:-translate-y-1/3 -rotate-1 rounded p-4 shadow-lg lg:top-0"
 		>
 			{#if phase === 0}
 				<div class="flex rotate-1 flex-col items-center gap-2">
