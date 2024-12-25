@@ -56,7 +56,7 @@
 		<h1 class="mb-4 text-center text-3xl font-bold">IA ou pas</h1>
 
 		<p class="mb-4 text-center">
-			Savez-vous différencier une texte écrit par une IA d'un texte écrit par un humain ?
+			Savez-vous différencier une texte généré par une IA d'un texte écrit par un humain ?
 		</p>
 	</div>
 

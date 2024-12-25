@@ -1,9 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
-
 	let { isOpen, children } = $props();
 
-	let modal;
+	let modal = $state();
 
 	function closeModal() {
 		isOpen = false;
