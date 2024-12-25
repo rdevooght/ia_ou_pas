@@ -4,6 +4,7 @@
 	import original_challenges from '$lib/challenges.json';
 	import { generateUUID, save_guess } from '$lib/log.js';
 	import { dev } from '$app/environment';
+	import EndScreen from '$lib/EndScreen.svelte';
 
 	function randomTextOrder() {
 		return Math.random() < 0.5 ? ['ai', 'human'] : ['human', 'ai'];
@@ -146,3 +147,7 @@
 		{/each}
 	</div>
 </div>
+
+{#if phase === 2}
+	<EndScreen {results} />
+{/if}

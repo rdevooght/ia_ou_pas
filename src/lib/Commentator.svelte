@@ -4,7 +4,6 @@
 	let correctGuesses = $derived(results.filter((result) => result).length);
 	let totalGuesses = $derived(results.length);
 	let incorrectGuesses = $derived(totalGuesses - correctGuesses);
-	let score = $derived((correctGuesses / totalGuesses) * 100);
 	let lastResult = $derived(results[results.length - 1]);
 
 	const comments = [
@@ -33,13 +32,13 @@
 		[1, 4, 1, "Allez tu sauves l'honneur ! Mais 1/5, c'est pas terrible."],
 		[2, 1, 0, null],
 		[2, 1, 1, null],
-		[2, 2, 0, '50/50... autant choisir au hasard.'],
-		[2, 2, 1, '50/50... autant choisir au hasard.'],
+		[2, 2, 0, '50/50... autant choisir au hasard 🎲'],
+		[2, 2, 1, '50/50... autant choisir au hasard 🎲'],
 		[2, 3, 0, "On dirait que c'est pas facile de différencier IA et humain."],
 		[2, 3, 1, 'Bon dernier choix, mais ça reste pas mieux que tirer à pile ou face.'],
 		[3, 1, 0, null],
 		[3, 1, 1, null],
-		[3, 2, 0, 'Dommage pour le dernier, au final tu ne fais pas beaucoup mieux que le hasard'],
+		[3, 2, 0, 'Dommage pour le dernier, au final tu ne fais pas beaucoup mieux que le hasard 🎰'],
 		[3, 2, 1, 'Bon dernier choix, mais ça reste pas beaucoup mieux que tirer à pile ou face.'],
 		[4, 1, 0, "Si proche du but ! Mais 4 sur 5 c'est vraiment pas mal."],
 		[4, 1, 1, 'Bravo, quasi sans faute !']
@@ -49,14 +48,13 @@
 		let comment = comments.find(
 			(c) => c[0] === correctGuesses && c[1] === incorrectGuesses && c[2] == lastResult
 		);
-		console.log(comment);
 		if (comment && comment[3]) {
 			return comment[3];
 		} else {
 			if (lastResult) {
 				return 'Correct !';
 			} else {
-				return "Non, c'était l'inverse :(";
+				return "Non, c'était l'inverse 😬";
 			}
 		}
 	}
