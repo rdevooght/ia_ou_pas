@@ -1,6 +1,6 @@
 <script>
 	import EndScreen from '$lib/EndScreen.svelte';
-	let results = $state([true, false, true, true, false]);
+	let results = $state([true, true, true, true, true]);
 	let ready = $state(false);
 
 	$effect(() => {
