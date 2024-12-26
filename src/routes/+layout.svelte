@@ -38,5 +38,5 @@
 </main>
 
 {#if !dev}
-    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "05b4282391484b1ba19c5fa3458aa5a6"}'></script><!-- End Cloudflare Web Analytics -->
+    {@html `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "05b4282391484b1ba19c5fa3458aa5a6"}'></script><!-- End Cloudflare Web Analytics -->`}
 {/if}
