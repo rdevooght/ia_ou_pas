@@ -53,7 +53,23 @@
 > -->
 <div class="flex min-h-screen flex-col bg-blue_violet-200 text-white">
 	<div class="px-4 pt-6">
-		<h1 class="mb-4 text-center text-3xl font-bold">IA ou pas</h1>
+		<h1 class="relative z-10 mb-4 text-center text-4xl font-bold lg:text-5xl">
+			<div class="inline-block w-32 text-right sm:w-44">
+				<div
+					class="text-terminal_green inline-block -rotate-1 bg-black px-2 py-1 font-['monospace']"
+				>
+					<span class=" text-terminal_green-300 text-3xl lg:text-4xl">></span>IA
+				</div>
+			</div>
+			<span class="text-white">ou</span>
+			<div class="inline-block w-32 text-left sm:w-44">
+				<div
+					class="inline-block rotate-1 rounded-sm bg-amber-900 px-2 py-1 font-['Dancing_Script'] text-amber-100"
+				>
+					Humain
+				</div>
+			</div>
+		</h1>
 
 		<p class="mb-4 text-center">
 			Savez-vous différencier une texte généré par une IA d'un texte écrit par un humain ?
@@ -97,7 +113,7 @@
 					<button
 						type="submit"
 						disabled={guess === null}
-						class="rounded bg-blue_violet-400 px-4 py-2 text-white disabled:cursor-not-allowed disabled:bg-slate-400"
+						class="rounded bg-blue_violet-400 px-4 py-2 text-white hover:bg-blue_violet-300 active:bg-blue_violet-200 disabled:cursor-not-allowed disabled:bg-slate-400"
 						>Valider</button
 					>
 				</div>
@@ -108,7 +124,11 @@
 					</div>
 					<div class="flex flex-col gap-2">
 						<Commentator {results} />
-						<button onclick={nextChallenge} type="button" class="rounded bg-blue-500 px-4 py-2">
+						<button
+							onclick={nextChallenge}
+							type="button"
+							class="rounded bg-blue_violet-400 px-4 py-2 hover:bg-blue_violet-300 active:bg-blue_violet-200"
+						>
 							Question suivante
 						</button>
 					</div>

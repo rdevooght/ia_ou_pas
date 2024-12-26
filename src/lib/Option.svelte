@@ -14,7 +14,7 @@
 	<div class="prose text-center text-white lg:prose-xl">
 		<p>{challenge[truth].text}</p>
 		{#if phase !== 0}
-			<p class="text-sm text-rose-900">
+			<p class="text-sm">
 				Source: {challenge[truth].source}
 			</p>
 		{/if}
@@ -22,6 +22,8 @@
 </label>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
 	.guessed-human {
 		@apply bg-rose shadow-inner shadow-rose-400;
 	}
@@ -37,14 +39,20 @@
 	.reveal-ai.correct-guess {
 		@apply bg-forest_green-600;
 	}
-
+	*/
 	.reveal-human {
-		@apply bg-red;
+		@apply bg-amber-900 font-['Dancing_Script'];
+	}
+	.reveal-human div {
+		@apply text-2xl text-amber-100;
 	}
 
 	.reveal-ai {
-		@apply bg-red-700;
-	} */
+		@apply bg-black font-['monospace'];
+	}
+	.reveal-ai div {
+		@apply text-terminal_green;
+	}
 
 	.guessed-human::before,
 	.guessed-ai::before,
@@ -62,13 +70,11 @@
 		opacity: 0.3;
 	}
 
-	.guessed-human::before,
-	.reveal-human::before {
+	.guessed-human::before {
 		background-image: url('/hand-writting.png');
 	}
 
-	.guessed-ai::before,
-	.reveal-ai::before {
+	.guessed-ai::before {
 		background-image: url('/ai-icon.png');
 	}
 </style>

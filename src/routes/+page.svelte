@@ -24,8 +24,10 @@
 			</div>
 
 			<div class="inline-block w-32 text-right sm:w-44">
-				<div class="inline-block -rotate-1 bg-black px-2 py-1 font-['monospace']">
-					<span class=" text-3xl text-gray-400 lg:text-4xl">></span>IA
+				<div
+					class="text-terminal_green inline-block -rotate-1 bg-black px-2 py-1 font-['monospace']"
+				>
+					<span class=" text-terminal_green-300 text-3xl lg:text-4xl">></span>IA
 				</div>
 			</div>
 			<span class="text-black">ou</span>
