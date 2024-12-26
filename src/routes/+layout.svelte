@@ -1,7 +1,6 @@
 <script>
 	import '../app.css';
 	import { dev } from '$app/environment';
-	export const prerender = true;
 	let { children } = $props();
 </script>
 
