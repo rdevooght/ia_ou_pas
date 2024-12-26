@@ -2,6 +2,8 @@
 	import '../app.css';
 	import { dev } from '$app/environment';
 	let { children } = $props();
+	export const trailingSlash = 'always';
+	export const prerender = true;
 </script>
 
 <svelte:head>
