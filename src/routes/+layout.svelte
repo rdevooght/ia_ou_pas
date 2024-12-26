@@ -1,8 +1,8 @@
 <script>
 	import '../app.css';
+	import { dev } from '$app/environment';
 	export const prerender = true;
 	let { children } = $props();
-	import { dev } from '$app/environment';
 </script>
 
 <svelte:head>
