@@ -5,12 +5,26 @@
 	import { generateUUID, save_guess } from '$lib/log.js';
 	import { dev } from '$app/environment';
 	import EndScreen from '$lib/EndScreen.svelte';
+	import confetti from 'canvas-confetti';
 
 	function randomTextOrder() {
 		return Math.random() < 0.5 ? ['ai', 'human'] : ['human', 'ai'];
 	}
 
 	dev ? console.log('dev mode') : null;
+
+	function successAnimation() {
+		const isReduced =
+			window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+			window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+		// Basic confetti burst
+		confetti({
+			particleCount: 100,
+			spread: 70,
+			origin: { y: 0.9 },
+			disableForReducedMotion: isReduced
+		});
+	}
 
 	const challenges = [...original_challenges].sort(() => Math.random() - 0.5);
 	const session_id = generateUUID();
@@ -29,6 +43,9 @@
 		results = [...results, correct];
 		if (!dev) {
 			save_guess(session_id, currentChallenge.id, correct);
+		}
+		if (correct) {
+			successAnimation();
 		}
 		if (challenges.length > currentChallengeID + 1) {
 			phase = 1;
