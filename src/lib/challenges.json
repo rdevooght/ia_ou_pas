@@ -43,7 +43,7 @@
 			"source": "Claude 3.5: Ecrit une intro pour la page Wikipédia de PJ Harvey"
 		},
 		"human": {
-			"text": "Polly Jean Harvey, plus connue sous le nom de PJ Harvey, est une chanteuse, auteure-compositrice britannique de rock alternatif, née le 9 octobre 1969 à Bridport (dans le comté de Dorset, au Royaume-Uni)1. Elle a formé en 1991 le trio PJ Harvey avec Rob Ellis et Steve Vaughan. Leurs deux premiers albums Dry et Rid of Me sont régulièrement cités parmi les meilleurs disques du début des années 1990 mais c'est en 1995 avec son premier album solo To Bring You My Love qu'elle obtient son premier succès international.",
+			"text": "Polly Jean Harvey, plus connue sous le nom de PJ Harvey, est une chanteuse, auteure-compositrice britannique de rock alternatif, née le 9 octobre 1969 à Bridport (dans le comté de Dorset, au Royaume-Uni). Elle a formé en 1991 le trio PJ Harvey avec Rob Ellis et Steve Vaughan. Leurs deux premiers albums Dry et Rid of Me sont régulièrement cités parmi les meilleurs disques du début des années 1990 mais c'est en 1995 avec son premier album solo To Bring You My Love qu'elle obtient son premier succès international.",
 			"source": "Page Wikipedia de PJ Harvey, version du 19/10/2020"
 		}
 	},
@@ -55,7 +55,7 @@
 			"source": "Gemini 1.5: Ecrit un cours mail détendu pour demander à des ami·es de venir aider pour monter une cuisine."
 		},
 		"human": {
-			"text": "Hello, On reprend les travaux chez nous, et on a prévu quelques weekend pour faire de la peinture, et peux-être commencer à monter la cuisine. Ca vous dit de nous donner un petit coup de main ? On s'engage à bien vous nourrir et vous abreuver pendant les travaux ;)",
+			"text": "Hello, On reprend les travaux chez nous, et on a prévu quelques weekend pour faire de la peinture, et peut-être commencer à monter la cuisine. Ca vous dit de nous donner un petit coup de main ? On s'engage à bien vous nourrir et vous abreuver pendant les travaux ;)",
 			"source": "Moi, il y a quelques mois"
 		}
 	}

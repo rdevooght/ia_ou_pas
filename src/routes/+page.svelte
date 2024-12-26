@@ -8,7 +8,7 @@
 
 		<div class="prose mx-auto text-white lg:prose-lg">
 			<p>
-				Il y a 2 ans, OpenAI lancait ChatGPT. Depuis, nous vivons dans un monde où te plus en plus
+				Il y a 2 ans, OpenAI lancait ChatGPT. Depuis, nous vivons dans un monde où de plus en plus
 				de texte est généré par des programmes plutôt qu'écrit par des humains.
 			</p>
 			<p>
