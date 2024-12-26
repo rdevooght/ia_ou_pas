@@ -21,6 +21,7 @@
 		property="og:description"
 		content="Savez-vous différencier une texte généré par une IA d'un texte écrit par un humain ?"
 	/>
+	<meta property="og:image" content="mini.png" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
@@ -30,6 +31,7 @@
 		property="twitter:description"
 		content="Savez-vous différencier une texte généré par une IA d'un texte écrit par un humain ?"
 	/>
+	<meta property="twitter:image" content="mini.png" />
 
 	<!-- Meta Tags Generated with https://metatags.io -->
 </svelte:head>
@@ -38,5 +40,5 @@
 </main>
 
 {#if !dev}
-    {@html `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "05b4282391484b1ba19c5fa3458aa5a6"}'></script><!-- End Cloudflare Web Analytics -->`}
+	{@html `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "05b4282391484b1ba19c5fa3458aa5a6"}'></script><!-- End Cloudflare Web Analytics -->`}
 {/if}
