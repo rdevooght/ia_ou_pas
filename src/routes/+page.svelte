@@ -4,7 +4,16 @@
 
 <div class="flex min-h-screen flex-col bg-blue_violet-200 text-white">
 	<div class="flex h-screen flex-col justify-center gap-10 px-4 pt-6">
-		<h1 class="mb-4 text-center text-4xl font-bold lg:text-5xl">IA ou pas ?</h1>
+		<h1 class="mb-4 text-center text-4xl font-bold lg:text-5xl">
+			<span class="inline-block -rotate-1 bg-black px-2 py-1 font-['monospace']"
+				><span class=" text-3xl text-gray-400 lg:text-4xl">></span>IA</span
+			>
+			ou
+			<span
+				class="inline-block rotate-1 rounded-sm bg-amber-900 px-2 py-1 font-['Dancing_Script'] text-amber-100"
+				>Humain</span
+			>
+		</h1>
 
 		<div class="prose mx-auto text-white lg:prose-lg">
 			<p>
@@ -25,3 +34,7 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Style+Script&display=swap');
+</style>
