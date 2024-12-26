@@ -21,7 +21,7 @@
 		property="og:description"
 		content="Savez-vous différencier une texte généré par une IA d'un texte écrit par un humain ?"
 	/>
-	<meta property="og:image" content="mini.png" />
+	<meta property="og:image" content="https://blog.robindevooght.be/ia_ou_pas/mini.png" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
@@ -31,7 +31,7 @@
 		property="twitter:description"
 		content="Savez-vous différencier une texte généré par une IA d'un texte écrit par un humain ?"
 	/>
-	<meta property="twitter:image" content="mini.png" />
+	<meta property="twitter:image" content="https://blog.robindevooght.be/ia_ou_pas/mini.png" />
 
 	<!-- Meta Tags Generated with https://metatags.io -->
 </svelte:head>
