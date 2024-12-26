@@ -149,5 +149,5 @@
 </div>
 
 {#if phase === 2}
-	<EndScreen {results} />
+	<EndScreen {results} share={dev} />
 {/if}

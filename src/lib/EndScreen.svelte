@@ -1,9 +1,8 @@
 <script>
 	import Modal from '$lib/Modal.svelte';
 	import Commentator from '$lib/Commentator.svelte';
-	import { dev } from '$app/environment';
 
-	let { results } = $props();
+	let { results, share } = $props();
 
 	let correctGuesses = $derived(results.filter((result) => result).length);
 	let last_result = $derived(results[results.length - 1]);
@@ -54,7 +53,7 @@
 			Niveau: {level[correctGuesses]}
 		</p>
 
-		{#if dev}
+		{#if share}
 			<div class="flex flex-row justify-center gap-2">
 				<!-- Facebook -->
 				<a

@@ -9,5 +9,5 @@
 </script>
 
 {#if ready}
-	<EndScreen {results} />
+	<EndScreen {results} share={true} />
 {/if}
