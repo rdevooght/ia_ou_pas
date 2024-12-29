@@ -73,9 +73,9 @@
 		<h1 class="relative z-10 mb-4 text-center text-4xl font-bold lg:text-5xl">
 			<div class="inline-block w-32 text-right sm:w-44">
 				<div
-					class="text-terminal_green inline-block -rotate-1 bg-black px-2 py-1 font-['monospace']"
+					class="inline-block -rotate-1 bg-black px-2 py-1 font-['monospace'] text-terminal_green"
 				>
-					<span class=" text-terminal_green-300 text-3xl lg:text-4xl">></span>IA
+					<span class=" text-3xl text-terminal_green-300 lg:text-4xl">></span>IA
 				</div>
 			</div>
 			<span class="text-white">ou</span>
@@ -165,25 +165,101 @@
 			{/if}
 		</div>
 	</form>
-	<div
-		class="flex w-full flex-row justify-center border-t border-amber-200 bg-amber p-2 text-black"
-	>
-		<div>Score:</div>
-		{#each challenges as challenge, i}
-			<div class="mx-1 h-6 w-6 text-center">
-				{#if i > results.length}
-					•
-				{:else if i === results.length}
-					?
-				{:else if results[i]}
-					<span class="text-sgbus_green-200">✓</span>
-				{:else}
-					<span class="text-red-300">✗</span>
-				{/if}
-			</div>
-		{/each}
+	<div class="border-t border-amber-200 bg-amber p-2 text-black">
+		<div class="flex flex-row justify-center">
+			<div>Score:</div>
+			{#each challenges as challenge, i}
+				<div class="mx-1 h-6 w-6 text-center">
+					{#if i > results.length}
+						•
+					{:else if i === results.length}
+						?
+					{:else if results[i]}
+						<span class="text-sgbus_green-200">✓</span>
+					{:else}
+						<span class="text-red-300">✗</span>
+					{/if}
+				</div>
+			{/each}
+		</div>
+		{#if phase === 2}
+			<h2 class="mt-3 text-center text-xl">
+				<span class="rounded-xl bg-rose-400 px-3 py-1 text-white">
+					Un peu de contexte
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="16"
+						fill="currentColor"
+						viewBox="0 0 16 16"
+						class="inline-block"
+					>
+						<path
+							d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
+						/>
+					</svg>
+				</span>
+			</h2>
+		{/if}
 	</div>
 </div>
+{#if phase === 2}
+	<div class="flex w-full flex-row justify-center bg-amber p-2 text-black">
+		<div class="prose">
+			<p>
+				Les capacité des IA génératives peuvent impressionner, et les chatbot sont aujourd’hui <a
+					href="https://www.odoxa.fr/sondage/un-francais-sur-cinq-a-deja-utilise-chatgpt/"
+					>largement utilisés</a
+				>, mais on ne peut en parler sans mentionner un série de problèmes que ces systèmes
+				soulèvent:
+			</p>
+			<ul>
+				<li>
+					Ces IA sont entraînées sur des textes, images et vidéos sans l’autorisation des auteurs et
+					autrices, parfois en ignorant une demande explicite des ayants droits de ne pas le faire.
+				</li>
+
+				<li>
+					Derrière les IA <a
+						href="https://www.theverge.com/features/23764584/ai-artificial-intelligence-data-notation-labor-scale-surge-remotasks-openai-chatbots"
+						>se cachent beaucoup d’humains</a
+					>
+					souvent
+					<a href="https://time.com/6247678/openai-chatgpt-kenya-workers"
+						>mal payés pour entraîner les modèles</a
+					>, les modérer ou
+					<a
+						href="https://www.theguardian.com/technology/2022/dec/13/becoming-a-chatbot-my-life-as-a-real-estate-ais-human-backup"
+						>prendre le relais quand l’IA montre ses limites</a
+					>.
+				</li>
+
+				<li>
+					La consommation électrique des IA est importante, <a
+						href="https://www.theguardian.com/technology/2024/sep/15/data-center-gas-emissions-tech"
+						>probablement sous-estimée</a
+					>
+					et en
+					<a
+						href="https://next.ink/162010/la-consommation-energetique-de-lia-devrait-etre-multipliee-par-4-a-9-dici-2050/"
+						>rapide augmentation</a
+					>. L’intense consommation des datacenters
+					<a href="https://www.bloomberg.com/graphics/2024-ai-power-home-appliances/"
+						>met à mal les réseaux électriques</a
+					>, et pousse les grandes entreprises de la tech à
+					<a href="https://www.thejournal.ie/investigates-data-centres-6554698-Nov2024/"
+						>se tourner vers les combustibles fossiles</a
+					>.
+				</li>
+
+				<li>
+					Les chatbot déclarent des vérités comme des pures inventions sur le même ton, et il ne
+					semble pas y avoir de piste claire pour résoudre ce problème.
+				</li>
+			</ul>
+		</div>
+	</div>
+{/if}
 
 {#if phase === 2}
 	<EndScreen {results} share={true} />
