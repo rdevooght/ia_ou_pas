@@ -9,7 +9,8 @@
 	class:reveal-human={(phase !== 0) & (truth === 'human')}
 	class:reveal-ai={(phase !== 0) & (truth === 'ai')}
 	class:correct-guess={(phase !== 0) & (truth === guess)}
-	class="relative flex flex-1 cursor-pointer items-center justify-center rounded-lg bg-rose-600 px-4 py-16 transition-colors hover:bg-rose"
+	class:cursor-pointer={phase === 0}
+	class="relative flex flex-1 items-center justify-center rounded-lg bg-rose-600 px-4 py-16 transition-colors hover:bg-rose"
 >
 	<div class="prose text-center text-white lg:prose-xl">
 		<p>{challenge[truth].text}</p>

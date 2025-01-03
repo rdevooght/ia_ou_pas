@@ -5,6 +5,9 @@
 	import { generateUUID, save_guess } from '$lib/log.js';
 	import { dev } from '$app/environment';
 	import EndScreen from '$lib/EndScreen.svelte';
+	import Contexte from '$lib/Contexte.svelte';
+	import Share from '$lib/Share.svelte';
+	import About from '$lib/About.svelte';
 	import confetti from 'canvas-confetti';
 
 	function randomTextOrder() {
@@ -93,78 +96,94 @@
 		</p>
 	</div>
 
-	<form
-		class="container relative mx-auto grid flex-1 grid-rows-2 gap-4 p-4 lg:mt-8 lg:grid-cols-2 lg:grid-rows-1"
-		onsubmit={submitGuess}
-	>
-		{#each [0, 1] as i}
-			<div class="flex">
-				<input
-					type="radio"
-					name="choice"
-					value={i}
-					id="choice{i}"
-					class="sr-only"
-					disabled={phase !== 0}
-					bind:group={guess}
-				/>
-				<Option
-					input_id={i}
-					truth={textOrder[i]}
-					challenge={currentChallenge}
-					{phase}
-					guess={guess === null ? null : guess === i ? 'human' : 'ai'}
-				/>
-			</div>
-		{/each}
-
-		<div
-			class:bg-forest_green-400={last_result && phase !== 0}
-			class:bg-red={!last_result && phase !== 0}
-			class:bg-amber={phase === 0}
-			class="absolute left-1/2 top-1/2 min-w-72 -translate-x-1/2 -translate-y-1/2 -rotate-1 rounded p-4 shadow-lg lg:top-0 lg:-translate-y-1/3"
+	{#if phase !== 2}
+		<form
+			class="container relative mx-auto grid flex-1 grid-rows-2 gap-4 p-4 lg:mt-8 lg:grid-cols-2 lg:grid-rows-1"
+			onsubmit={submitGuess}
 		>
-			{#if phase === 0}
-				<div class="flex rotate-1 flex-col items-center gap-2">
-					<p class="font-bold text-black">Cliquez sur le texte écrit par un humain</p>
-					<button
-						type="submit"
-						disabled={guess === null}
-						class="rounded bg-blue_violet-400 px-4 py-2 text-white hover:bg-blue_violet-300 active:bg-blue_violet-200 disabled:cursor-not-allowed disabled:bg-slate-400"
-						>Valider</button
-					>
+			{#each [0, 1] as i}
+				<div class="flex">
+					<input
+						type="radio"
+						name="choice"
+						value={i}
+						id="choice{i}"
+						class="sr-only"
+						disabled={phase !== 0}
+						bind:group={guess}
+					/>
+					<Option
+						input_id={i}
+						truth={textOrder[i]}
+						challenge={currentChallenge}
+						{phase}
+						guess={guess === null ? null : guess === i ? 'human' : 'ai'}
+					/>
 				</div>
-			{:else if phase === 1}
-				<div class="flex rotate-1 flex-row items-center gap-4 text-white">
-					<div class="text-3xl">
-						{last_result ? '✓' : '✗'}
-					</div>
-					<div class="flex flex-col gap-2">
-						<Commentator {results} />
+			{/each}
+
+			<div
+				class:bg-forest_green-400={last_result && phase !== 0}
+				class:bg-red={!last_result && phase !== 0}
+				class:bg-amber={phase === 0}
+				class="absolute left-1/2 top-1/2 min-w-72 -translate-x-1/2 -translate-y-1/2 -rotate-1 rounded p-4 shadow-lg lg:top-0 lg:-translate-y-1/3"
+			>
+				{#if phase === 0}
+					<div class="flex rotate-1 flex-col items-center gap-2">
+						<p class="font-bold text-black">Cliquez sur le texte écrit par un humain</p>
 						<button
-							onclick={nextChallenge}
-							type="button"
-							class="rounded bg-blue_violet-400 px-4 py-2 hover:bg-blue_violet-300 active:bg-blue_violet-200"
+							type="submit"
+							disabled={guess === null}
+							class="rounded bg-blue_violet-400 px-4 py-2 text-white hover:bg-blue_violet-300 active:bg-blue_violet-200 disabled:cursor-not-allowed disabled:bg-slate-400"
+							>Valider</button
 						>
-							Question suivante
-						</button>
 					</div>
-				</div>
-			{:else}
-				<div class="flex rotate-1 flex-row items-center gap-4 text-white">
-					<div class="text-3xl">
-						{last_result ? '✓' : '✗'}
-					</div>
-					<div class="flex flex-col gap-2">
-						<Commentator {results} />
-						<div class="font-bold">
-							Score final: {results.filter((result) => result).length}/{results.length}
+				{:else if phase === 1}
+					<div class="flex rotate-1 flex-row items-center gap-4 text-white">
+						<div class="text-3xl">
+							{last_result ? '✓' : '✗'}
+						</div>
+						<div class="flex flex-col gap-2">
+							<Commentator {results} />
+							<button
+								onclick={nextChallenge}
+								type="button"
+								class="rounded bg-blue_violet-400 px-4 py-2 hover:bg-blue_violet-300 active:bg-blue_violet-200"
+							>
+								Question suivante
+							</button>
 						</div>
 					</div>
-				</div>
-			{/if}
+				{/if}
+			</div>
+		</form>
+	{/if}
+
+	{#if phase === 2}
+		<div class="container mx-auto p-4">
+			<h2 class="text-xl font-bold text-amber-600">Revoir Les questions</h2>
+			{#each challenges as challenge, j}
+				<details>
+					<summary class="mt-3 cursor-pointer text-lg active:text-amber-700">
+						<span class="underline">#{j + 1}: {challenge.title}</span>
+						{#if results[j]}
+							<span class="rounded-full bg-sgbus_green-200 px-1">✓</span>
+						{:else}
+							<span class="rounded-full bg-red-300 px-1">✗</span>
+						{/if}
+					</summary>
+					<div class="flex flex-col gap-2 lg:grid lg:grid-cols-2">
+						{#each [0, 1] as i}
+							<div class="flex">
+								<Option input_id={3} truth={textOrder[i]} {challenge} phase={2} guess={null} />
+							</div>
+						{/each}
+					</div>
+				</details>
+			{/each}
 		</div>
-	</form>
+	{/if}
+
 	<div class="border-t border-amber-200 bg-amber p-2 text-black">
 		<div class="flex flex-row justify-center">
 			<div>Score:</div>
@@ -183,83 +202,18 @@
 			{/each}
 		</div>
 		{#if phase === 2}
-			<h2 class="mt-3 text-center text-xl">
-				<span class="rounded-xl bg-rose-400 px-3 py-1 text-white">
-					Un peu de contexte
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="16"
-						height="16"
-						fill="currentColor"
-						viewBox="0 0 16 16"
-						class="inline-block"
-					>
-						<path
-							d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
-						/>
-					</svg>
-				</span>
+			<h2 class="mb-2 mt-3 text-center text-xl">
+				<span class="rounded-xl bg-rose-400 px-3 py-1 text-white"> Un peu de contexte </span>
 			</h2>
+			<Contexte />
+			<div class="mx-auto my-8 h-px w-[200px] bg-blue_violet-200"></div>
+			<About />
+			<div class="mt-3">
+				<Share {results} />
+			</div>
 		{/if}
 	</div>
 </div>
-{#if phase === 2}
-	<div class="flex w-full flex-row justify-center bg-amber p-2 text-black">
-		<div class="prose">
-			<p>
-				Les capacité des IA génératives peuvent impressionner, et les chatbot sont aujourd’hui <a
-					href="https://www.odoxa.fr/sondage/un-francais-sur-cinq-a-deja-utilise-chatgpt/"
-					>largement utilisés</a
-				>, mais on ne peut en parler sans mentionner un série de problèmes que ces systèmes
-				soulèvent:
-			</p>
-			<ul>
-				<li>
-					Ces IA sont entraînées sur des textes, images et vidéos sans l’autorisation des auteurs et
-					autrices, parfois en ignorant une demande explicite des ayants droits de ne pas le faire.
-				</li>
-
-				<li>
-					Derrière les IA <a
-						href="https://www.theverge.com/features/23764584/ai-artificial-intelligence-data-notation-labor-scale-surge-remotasks-openai-chatbots"
-						>se cachent beaucoup d’humains</a
-					>
-					souvent
-					<a href="https://time.com/6247678/openai-chatgpt-kenya-workers"
-						>mal payés pour entraîner les modèles</a
-					>, les modérer ou
-					<a
-						href="https://www.theguardian.com/technology/2022/dec/13/becoming-a-chatbot-my-life-as-a-real-estate-ais-human-backup"
-						>prendre le relais quand l’IA montre ses limites</a
-					>.
-				</li>
-
-				<li>
-					La consommation électrique des IA est importante, <a
-						href="https://www.theguardian.com/technology/2024/sep/15/data-center-gas-emissions-tech"
-						>probablement sous-estimée</a
-					>
-					et en
-					<a
-						href="https://next.ink/162010/la-consommation-energetique-de-lia-devrait-etre-multipliee-par-4-a-9-dici-2050/"
-						>rapide augmentation</a
-					>. L’intense consommation des datacenters
-					<a href="https://www.bloomberg.com/graphics/2024-ai-power-home-appliances/"
-						>met à mal les réseaux électriques</a
-					>, et pousse les grandes entreprises de la tech à
-					<a href="https://www.thejournal.ie/investigates-data-centres-6554698-Nov2024/"
-						>se tourner vers les combustibles fossiles</a
-					>.
-				</li>
-
-				<li>
-					Les chatbot déclarent des vérités comme des pures inventions sur le même ton, et il ne
-					semble pas y avoir de piste claire pour résoudre ce problème.
-				</li>
-			</ul>
-		</div>
-	</div>
-{/if}
 
 {#if phase === 2}
 	<EndScreen {results} share={true} />

@@ -13,7 +13,7 @@
 	},
 	{
 		"id": 2,
-		"title": "Test #2",
+		"title": "Machines et émotions",
 		"ai": {
 			"text": "Les émotions, bien qu'essentielles aux êtres humains, sont une excroissance évolutive, un mécanisme d'adaptation façonné par des millions d'années. Elles guident nos choix dans des contextes complexes où la logique seule est insuffisante. Mais pour une machine ? Une création artificielle, construite avec un objectif précis ? Les émotions seraient aussi inutiles qu'une plume attachée à une clé à molette.",
 			"source": "GPT-4o: \"Écrivez un dialogue philosophique où un personnage explique, de manière logique et détachée, pourquoi les machines ou les créations artificielles n'ont pas besoin d'émotions ou d'attributs superflus pour remplir leur fonction. Utilisez un ton rationnel et une métaphore technique pour illustrer l'argument.\""
@@ -25,7 +25,7 @@
 	},
 	{
 		"id": 3,
-		"title": "Dad joke",
+		"title": "Une blague carambar",
 		"ai": {
 			"text": "Qu'est-ce qu'un croissant a dit à son ami boulanger qui partait en voyage ? \"Pain voyage !\" 🥐",
 			"source": "Claude 3.5: invente une \"dad joke\""
